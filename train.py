@@ -1,6 +1,8 @@
 import tensorflow as tf
 from tensorflow.keras.layers import Flatten, Dense
 
+from ChartsExt import draw_charts
+
 mnist = tf.keras.datasets.mnist
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 
@@ -14,15 +16,24 @@ model.add(Dense(256, activation='relu'))
 model.add(Dense(128, activation='relu'))
 model.add(Dense(10, activation='softmax'))
 
-model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+model.compile(
+    optimizer='adam',
+    loss='sparse_categorical_crossentropy',
+    metrics=['accuracy']
+)
 
 history = model.fit(x_train, y_train, epochs=10)
-# model.evaluate(x_test, y_test)
-
 model.save('model.keras')
 
-# todo добавить графики
-# todo сверточная сеть
-# todo добавить валидацию test
 
+draw_charts(history)
+print("Evaluate on test data")
+results = model.evaluate(x_test, y_test, batch_size=128)
+print("test loss, test acc:", results)
+
+
+# todo сверточная сеть
+
+# done добавить валидацию test
+# done добавить графики
 # done идея ч/б или наоборот
