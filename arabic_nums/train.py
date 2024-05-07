@@ -17,20 +17,19 @@ model.compile(
     metrics=['accuracy']
 )
 history = model.fit(x_train, y_train, epochs=10)
+model.save('arabic_nums/model.keras')
 
-# evaluate
+# evaluate and draw stats
 print("Evaluate on test data")
 results = model.evaluate(x_test, y_test, batch_size=128)
 print("test loss, test acc:", results)
-
-model.save('model.keras')
-
 draw_charts(history)
+
 
 # todo римский датасет с цифрами
 # todo подстроить тестовые данные
-# todo acc loss автоматизация
 
+# done acc loss автоматизация
 # done сверточная сеть
 # done добавить валидацию test
 # done добавить графики
