@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
-from ImageExt import preprocess_img
+from ext.ImageExt import preprocess_img
 
 model = tf.keras.models.load_model('model.keras')
 
