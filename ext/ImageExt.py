@@ -1,7 +1,5 @@
 import numpy as np
-import matplotlib.pyplot as plt
 import cv2
-import skimage as ski
 
 
 def blur(img):  # [ 1, 28, 28 ]
@@ -34,7 +32,6 @@ def preprocess_img(img):
     blured = blur(img)
     negatived = negative(blured)
     return negatived
-
 
 # test
 # image_name = 'digits/digit-' + str(5) + '.png'
