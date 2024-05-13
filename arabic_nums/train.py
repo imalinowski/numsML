@@ -1,5 +1,5 @@
 import tensorflow as tf
-from arabic_nums.model import create_model
+from ext.model import create_model
 from ext.ChartsExt import draw_charts
 
 mnist = tf.keras.datasets.mnist
