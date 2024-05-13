@@ -17,7 +17,7 @@ model.compile(
     metrics=['accuracy']
 )
 history = model.fit(x_train, y_train, epochs=10)
-model.save('arabic_nums/model.keras')
+model.save('model.keras')
 
 # evaluate and draw stats
 print("Evaluate on test data")
