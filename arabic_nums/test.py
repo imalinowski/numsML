@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 from ext.ImageExt import preprocess_img
 
-path = 'arabic_nums/digits/'
+path = 'digits/'
 
 # model = tf.keras.models.load_model('arabic_nums/best_model.keras') # acc 91.67 loss 8.33
-model = tf.keras.models.load_model('arabic_nums/model.keras')
+model = tf.keras.models.load_model('model.keras')
 
 
 def get_image_name(image_num):
