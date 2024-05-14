@@ -37,7 +37,7 @@ def testModel(test_data_path, model):
             try:
                 image_name = get_image_name(dirname, filename)
                 prediction = predict_number(model, image_name)
-                predicted_num = np.argmax(prediction) + 1
+                predicted_num = np.argmax(prediction)
                 print(f"This digit {image_name} is probably a {predicted_num}")
 
                 if predicted_num == get_img_num(image_name):

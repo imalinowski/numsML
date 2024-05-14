@@ -4,7 +4,7 @@ import os
 import cv2
 from matplotlib import pyplot as plt
 
-from ext.ImageExt import preprocess_img
+from ext.ImageExt import negative
 
 
 def get_image_num(image_name):
@@ -24,7 +24,7 @@ def parseDataSet(path):
 
                 img = cv2.imread(img_name)[:, :, :]
                 img = cv2.resize(img, (28, 28))
-                img = preprocess_img(img)
+                img = negative(img)
 
                 if "train" in dirname:
                     y_train.append(img_num)
@@ -42,15 +42,14 @@ def parseDataSet(path):
 
 
 # test
-
+#
 # path = "/Users/imalinowski/PycharmProjects/NumsML/roman_nums"
 #
 # x_train, y_train, x_test, y_test, x_val, y_val = parseDataSet(path + '/dataset')
 #
 # print(x_train.shape, y_train.shape, x_test.shape, y_test.shape, x_val.shape, y_val.shape)
 #
-# for i in range(100, 110):
-#     img = x_train[i]
+# for i in range(200, 210):
 #     print(y_train[i])
-#     plt.imshow(img, cmap='gray')
+#     plt.imshow(x_train[i], cmap='gray')
 #     plt.show()

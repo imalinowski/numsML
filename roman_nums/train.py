@@ -1,8 +1,9 @@
 import pathlib
 from ext.ChartsExt import draw_charts
-from arabic_nums.model import create_model
 from ext.DatasetParser import parseDataSet
 import tensorflow as tf
+
+from roman_nums.model import create_roman_model
 
 path = str(pathlib.Path().resolve())
 
@@ -13,7 +14,7 @@ x_test = tf.keras.utils.normalize(x_test, axis=1)
 x_val = tf.keras.utils.normalize(x_val, axis=1)
 
 
-model = create_model()
+model = create_roman_model()
 
 # compile and fit
 model.compile(
@@ -21,7 +22,7 @@ model.compile(
     loss='sparse_categorical_crossentropy',
     metrics=['accuracy']
 )
-history = model.fit(x_train, y_train, epochs=10, validation_data=(x_val, y_val))
+history = model.fit(x_train, y_train, epochs=15, validation_data=(x_val, y_val))
 model.save('model.keras')
 
 # evaluate and draw stats
