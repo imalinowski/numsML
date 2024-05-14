@@ -37,17 +37,17 @@ def testModel(test_data_path, model):
             try:
                 image_name = get_image_name(dirname, filename)
                 prediction = predict_number(model, image_name)
-                predicted_num = np.argmax(prediction)
+                predicted_num = np.argmax(prediction) + 1
                 print(f"This digit {image_name} is probably a {predicted_num}")
 
                 if predicted_num == get_img_num(image_name):
                     correct_predictions += 1
                 else:
                     loss += 1  # maybe incorrect
-            except:
-                print("Error!")
-            finally:
+
                 image_number += 1
+            except:
+                continue
 
     accuracy = correct_predictions / image_number
     print("Accuracy: {:.2f}%".format(accuracy * 100))

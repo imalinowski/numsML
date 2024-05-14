@@ -8,7 +8,7 @@ from ext.ImageExt import negative
 
 
 def get_image_num(image_name):
-    return int(image_name.split('_')[0])
+    return int(image_name.split('_')[0]) - 1
 
 
 def parseDataSet(path):

@@ -29,3 +29,5 @@ print("Evaluate on test data")
 results = model.evaluate(x_test, y_test, batch_size=128)
 print("test loss, test acc:", results)
 draw_charts(history)
+
+# аугментация ( расширение данных )
