@@ -17,7 +17,7 @@ model.compile(
     metrics=['accuracy']
 )
 history = model.fit(x_train, y_train, epochs=10)
-model.save('model.keras')
+model.save('best_model.keras')
 
 # evaluate and draw stats
 print("Evaluate on test data")

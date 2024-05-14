@@ -8,7 +8,7 @@ from ext.ImageExt import preprocess_img
 path = 'digits/'
 
 # model = tf.keras.models.load_model('arabic_nums/best_model.keras') # acc 91.67 loss 8.33
-model = tf.keras.models.load_model('model.keras')
+model = tf.keras.models.load_model('best_model.keras')
 
 
 def get_image_name(image_num):

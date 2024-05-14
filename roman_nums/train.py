@@ -13,7 +13,6 @@ x_train = tf.keras.utils.normalize(x_train, axis=1)
 x_test = tf.keras.utils.normalize(x_test, axis=1)
 x_val = tf.keras.utils.normalize(x_val, axis=1)
 
-
 model = create_roman_model()
 
 # compile and fit
@@ -22,7 +21,7 @@ model.compile(
     loss='sparse_categorical_crossentropy',
     metrics=['accuracy']
 )
-history = model.fit(x_train, y_train, epochs=15, validation_data=(x_val, y_val))
+history = model.fit(x_train, y_train, epochs=10, validation_data=(x_val, y_val))
 model.save('model.keras')
 
 # evaluate and draw stats
