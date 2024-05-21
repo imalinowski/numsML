@@ -21,7 +21,7 @@ model.compile(
     loss='sparse_categorical_crossentropy',
     metrics=['accuracy']
 )
-history = model.fit(x_train, y_train, epochs=10, validation_data=(x_val, y_val))
+history = model.fit(x_train, y_train, epochs=2, validation_data=(x_val, y_val))
 model.save('model.keras')
 
 # evaluate and draw stats
